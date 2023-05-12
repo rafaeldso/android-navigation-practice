@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/loginFragment">
+
+    <include app:graph="@navigation/first_nav_graph"/>
+    <include app:graph="@navigation/second_nav_graph"/>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.br.rafael.android_navigation_practice.ui.login.LoginFragment"
+        android:label="@string/welcome"
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/goToFirt"
+            app:destination="@id/first_nav_graph"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/goToSecond"
+            app:destination="@id/second_nav_graph"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+</navigation>
